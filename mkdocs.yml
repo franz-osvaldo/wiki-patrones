@@ -1,4 +1,4 @@
-site_name: Catálogo de Prompts
+site_name: CATÁLOGO DE PROMPTS
 theme:
   name: material
   features:
@@ -26,4 +26,6 @@ markdown_extensions:
   - pymdownx.superfences
 nav:
     - Index: index.md
+    - Patrón de Creación de Metalenguaje: Patron-de-Creacion-de-Metalenguaje.md
+    - Automatizador de Salida: Automatizador-de-Salida.md
     - Patrón Persona: Patron-Persona.md
