@@ -28,4 +28,5 @@ nav:
     - Index: index.md
     - Patrón de Creación de Metalenguaje: Patron-de-Creacion-de-Metalenguaje.md
     - Automatizador de Salida: Automatizador-de-Salida.md
+    - Patrón de Interacción Invertida: Patron-de-Interaccion-Invertida.md
     - Patrón Persona: Patron-Persona.md
