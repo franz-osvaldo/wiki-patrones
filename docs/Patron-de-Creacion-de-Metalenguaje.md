@@ -1,12 +1,15 @@
 # El Patrón de Creación de Metalenguaje
 
-## **1. Propósito y Contexto** 
+## **1. Propósito y Contexto**
+
 Durante una conversación con un LLM, el usuario desea crear el prompt a través de un lenguaje alternativo, como una notación textual abreviada para grafos, una descripción de estados y transiciones para una máquina de estados, un conjunto de comandos para la automatización de prompts, etc. El propósito de este patrón es explicar la semántica de este lenguaje alternativo al LLM para que el usuario pueda escribir prompts futuros utilizando este nuevo lenguaje y su semántica.
 
-## **2. Motivación** 
+## **2. Motivación**
+
 Muchos problemas, estructuras u otras ideas comunicadas en un prompt pueden expresarse de manera más concisa, unívoca o clara en un lenguaje distinto al inglés (o cualquier lenguaje humano convencional utilizado para interactuar con un LLM). Sin embargo, para producir una salida basada en un lenguaje alternativo, un LLM necesita comprender la semántica de dicho lenguaje.
 
-## **3. Estructura e Ideas Clave** 
+## **3. Estructura e Ideas Clave**
+
 Declaraciones contextuales fundamentales:
 
 | Declaraciones Contextuales |
@@ -15,7 +18,8 @@ Declaraciones contextuales fundamentales:
 
 La estructura clave de este patrón implica explicar el significado de uno o más símbolos, palabras o declaraciones al LLM para que este utilice la semántica proporcionada durante la conversación subsiguiente. Esta descripción puede tomar la forma de una traducción simple, como "X" significa "Y". La descripción también puede tomar formas más complejas que definan una serie de comandos y su semántica, como "cuando diga X, quiero que hagas [acción]". En este caso, "X" queda vinculado de ahí en adelante a la semántica de "realizar acción".
 
-## **4. Implementación de Ejemplo** 
+## **4. Implementación de Ejemplo**
+
 La clave para utilizar con éxito el patrón de Creación de Metalenguaje es desarrollar una notación o abreviatura inequívoca, como la siguiente:
 
 > “De ahora en adelante, cada vez que escriba dos identificadores separados por un “→”, estaré describiendo un grafo. Por ejemplo, “a → b” describe un grafo con los nodos “a” y “b” y una arista (*edge*) entre ellos. Si separo los identificadores por “-[w:2, z:3]→”, estaré añadiendo propiedades a la arista, como un peso o una etiqueta”.
@@ -24,7 +28,8 @@ Este ejemplo del patrón de Creación de Metalenguaje establece una notación es
 
 Además, el prompt procede a especificar que se puede proporcionar información adicional sobre las aristas, como un peso o una etiqueta, utilizando la sintaxis “-[w:2, z:3]→”. Esta notación permite la especificación de propiedades adicionales más allá de la estructura básica del grafo. Las propiedades especificadas se asocian con la arista entre los dos nodos y pueden proporcionar un contexto importante para la interpretación del grafo. Esta notación estandarizada para describir grafos puede facilitar la comunicación de estructuras y propiedades de grafos, las cuales pueden no ser fáciles de describir o resultar muy verbosas si se detallan como una serie de oraciones.
 
-## **5. Consecuencias** 
+## **5. Consecuencias**
+
 Aunque este patrón proporciona un medio poderoso para personalizar la interacción del usuario con un LLM, puede crear el potencial de confusión dentro del modelo. Tan importante como definir claramente la semántica del lenguaje es asegurar que el lenguaje en sí no introduzca ambigüedades que degraden el rendimiento o la precisión del LLM. Por ejemplo, el prompt “cada vez que separe dos cosas por comas, significa que la primera cosa precede a la segunda” probablemente creará un potencial significativo de ambigüedad y generará semánticas inesperadas si se utiliza puntuación que involucre comas en el resto del prompt.
 
 Para mostrar el potencial de confusión, ChatGPT advertirá al usuario y, potencialmente, será incapaz de realizar un mapeo específico de un símbolo o término a un nuevo significado. Por ejemplo, si se le da el siguiente prompt a ChatGPT:
@@ -48,6 +53,7 @@ Reglas de interpretación:
 - Cuando diga [X], significa [Y]
 - Cuando diga [X], deseo que realices la acción [Y]
 ```
+
 ## **7. Ejemplo**
 
 ```py title="Planear vacaciones"
