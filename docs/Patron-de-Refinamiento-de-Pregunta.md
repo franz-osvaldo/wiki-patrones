@@ -42,3 +42,61 @@ Al igual que con muchos patrones que permiten a un LLM generar nuevas preguntas 
 > “De ahora en adelante, cada vez que haga una pregunta, haz cuatro preguntas adicionales que te ayuden a producir una versión mejor de mi pregunta original. Luego, usa mis respuestas para sugerir una versión mejor de mi pregunta original. Después de las preguntas de seguimiento, actúa temporalmente como un usuario sin conocimientos de AWS y define cualquier término que necesite saber para responder con precisión a las preguntas”.
 
 Un LLM siempre puede producir imprecisiones fácticas, al igual que un humano. Un riesgo de este patrón es que las imprecisiones se introduzcan en la pregunta refinada. Este riesgo puede mitigarse, sin embargo, combinando el patrón de **Lista de Verificación de Hechos** para permitir al usuario identificar posibles imprecisiones y el patrón de **Reflexión** para explicar el razonamiento detrás del refinamiento de la pregunta.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[PREGUNTA]
+## PROTOCOLO DE REFINAMIENTO
+Antes de responder:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
+
+## **7. Ejemplos**
+
+```py title="Número de Huesos"
+¿Cuántos huesos tiene el cuerpo humano?
+## PROTOCOLO DE REFINAMIENTO
+Antes de responder:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
+
+```py title="Número de Paises"
+¿Cuántos países hay en el mundo?
+## PROTOCOLO DE REFINAMIENTO
+Antes de responder:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
+
+```py title="La montaña más alta"
+¿Cuál es la montaña más alta?
+## PROTOCOLO DE REFINAMIENTO
+Antes de responder:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
+
+```py title="A qué temperatura"
+¿A qué temperatura hierve el agua?
+## PROTOCOLO DE REFINAMIENTO
+Antes de responder:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
+
+```py title="A qué temperatura"
+¿El tomate es una fruta o una verdura?
+## PROTOCOLO DE REFINAMIENTO
+Antes de responder:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
