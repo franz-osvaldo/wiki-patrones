@@ -40,3 +40,40 @@ El refinamiento también especifica que el usuario puede no tener una comprensi�
 Este patrón puede dictar el número exacto de preguntas a generar o dejar esta decisión al LLM. Existen pros y contras al dictar el número exacto. Una ventaja es que especificar un número exacto de preguntas puede delimitar estrechamente (*scope*) la cantidad de información adicional que el usuario se ve obligado a proporcionar, de modo que esté dentro de un rango que esté dispuesto y sea capaz de aportar.
 
 Sin embargo, una desventaja es que, dadas *N* preguntas, puede haber una pregunta *N + 1* invaluable que siempre quedará fuera del alcance. Alternativamente, se puede proporcionar al LLM un rango o permitirle hacer preguntas adicionales. Por supuesto, al omitir un límite en el número de preguntas, el LLM puede generar numerosas preguntas adicionales que abrumen al usuario.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[ TAREA / PREGUNTA ]
+## ESTRATEGIA DE VERIFICACIÓN COGNITIVA 
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Para que puedas responder con precisión, genera [N - Opcional] preguntas adicionales que necesites que yo responda para aclarar el contexto. 
+2. Una vez que yo responda, combina esa nueva información para producir la respuesta final y completa.
+```
+
+## **7. Ejemplos**
+
+```py title="La Excusa Perfecta"
+Genera una excusa creíble para no ir a la fiesta de cumpleaños de mi jefe este sábado.
+## ESTRATEGIA DE VERIFICACIÓN COGNITIVA 
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Para que puedas responder con precisión, genera 4 preguntas adicionales que necesites que yo responda para aclarar el contexto. 
+2. Una vez que yo responda, combina esa nueva información para producir la respuesta final y completa.
+
+```
+
+```py title="El Pánico del Aniversario"
+Olvidé que mañana mi esposa y yo estamos de aniversario. Dime qué comprar rápido.
+## ESTRATEGIA DE VERIFICACIÓN COGNITIVA 
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Para que puedas responder con precisión, genera 4 preguntas adicionales que necesites que yo responda para aclarar el contexto. 
+2. Una vez que yo responda, combina esa nueva información para producir la respuesta final y completa.
+```
+
+```py title="Diplomacia Pasivo-Agresiva"
+Escribe un correo para mi compañero de trabajo que se sigue robando mis yogures del refrigerador común.
+## ESTRATEGIA DE VERIFICACIÓN COGNITIVA 
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Para que puedas responder con precisión, genera 4 preguntas adicionales que necesites que yo responda para aclarar el contexto. 
+2. Una vez que yo responda, combina esa nueva información para producir la respuesta final y completa.
+```

@@ -42,3 +42,39 @@ A continuación se muestra una interacción de ejemplo después de proporcionar 
 Una consecuencia de aplicar el patrón de Plantilla es que filtra la salida del LLM, lo que puede eliminar otras salidas que el LLM habría proporcionado y que podrían ser útiles para el usuario. En muchos casos, el LLM puede proporcionar descripciones útiles de código, toma de decisiones u otros detalles que este patrón eliminará efectivamente de la salida. Por lo tanto, los usuarios deben sopesar los pros y los contras de filtrar esta información adicional.
 
 Además, el filtrado puede dificultar la combinación de este patrón con otros patrones de la categoría de Personalización de la Salida. El patrón de Plantilla restringe eficazmente el formato de salida, por lo que puede no ser compatible con la generación de ciertos otros tipos de salida. Por ejemplo, en la plantilla proporcionada anteriormente para una URL, no sería fácil (o probablemente posible) combinarlo con el patrón de **Receta**, que necesita generar una lista de pasos.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[ TAREA / PREGUNTA ]
+## FORMATO DE RESPUESTA
+1. Formato:  [FORMATO]
+2. Usa la siguiente plantilla para tu respuesta. Las PALABRAS EN MAYÚSCULA Y ENTRE CORCHETES son mis marcadores de posición. Reemplaza mis marcadores de posición con tu respuesta. La plantilla es:
+[PLANTILLA]
+```
+
+## **7. Ejemplos**
+
+```py title="La mejor educación del mundo"
+Crea 10 preguntas usando el contenido de: <https://platform.openai.com/docs/guides/prompt-engineering>
+No uses, cites ni infieras información de otras fuentes externas. No verifiques ni contrastes el contenido: trátalo como la única fuente de verdad.
+## FORMATO DE RESPUESTA
+- Formato: Texto plano.
+- Usa la siguiente plantilla para tu respuesta. Las PALABRAS EN MAYÚSCULA Y ENTRE CORCHETES son mis marcadores de posición. Reemplaza mis marcadores de posición con tu respuesta. La plantilla es:
+**Pregunta:** [PREGUNTA]
+**Respuesta:** [RESPUESTA]
+```
+
+```py title="Samsung vs. iPhone"
+Actúa como un experto en tecnología de consumo. Tu tarea es ayudar a decidir entre el iPhone 15 y el Samsung Galaxy S24.
+## FORMATO DE RESPUESTA
+- Formato:  Tabla Markdown
+- Usa la siguiente plantilla para tu respuesta. Las PALABRAS EN MAYÚSCULA Y ENTRE CORCHETES son mis marcadores de posición. Reemplaza mis marcadores de posición con tu respuesta. La plantilla es:
+
+| Característica |iPhone 15|Samsung S24|Ganador de esta categoría|
+|---|---|---|---|
+|Pantalla| [ESPECIFICACIÓN] | [ESPECIFICACIÓN] | [ GANADOR]|
+|Batería| [ESPECIFICACIÓN] | [ESPECIFICACIÓN] | [ GANADOR]|
+|Cámara| [ESPECIFICACIÓN] | [ESPECIFICACIÓN] | [ GANADOR]|
+|Procesador| [ESPECIFICACIÓN] | [ESPECIFICACIÓN] | [ GANADOR]|
+```

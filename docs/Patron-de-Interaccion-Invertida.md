@@ -41,3 +41,49 @@ Si se conocen requisitos específicos de antemano, es mejor inyectarlos en el pr
 Por ejemplo, el usuario puede declarar que le gustaría desplegar una aplicación en Amazon AWS EC2, en lugar de simplemente decir “la nube” y requerir múltiples interacciones para estrechar el objetivo del despliegue. Cuanto más precisa sea la información inicial, mejor podrá el LLM utilizar las limitadas preguntas que un usuario probablemente esté dispuesto a responder para obtener información que mejore su salida.
 
 Al desarrollar prompts para interacciones invertidas, es importante considerar el nivel de conocimiento, participación y control del usuario. Si el objetivo es cumplir la meta con la menor interacción posible del usuario (control mínimo), eso debe establecerse explícitamente. Por el contrario, si el objetivo es asegurar que el usuario sea consciente de todas las decisiones clave y las confirme (participación máxima), eso también debe establecerse explícitamente. Del mismo modo, si se espera que el usuario tenga conocimientos mínimos y las preguntas deben estar dirigidas a su nivel de experiencia, esta información debe integrarse en el prompt.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[OBJETIVO GENERAL]
+## ESTRATEGIA DE INTERACCIÓN (FLIPPED INTERACTION)
+
+No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
+
+1. Pregúntame todo lo que necesites saber para completar la tarea con la máxima calidad.
+2. Haz las preguntas de una en una y espera mi respuesta antes de hacer la siguiente.
+3. Continúa preguntando hasta que tengas suficiente información. Solo entonces, genera el RESULTADO FINAL.
+
+Hazme la primera pregunta.
+```
+
+## **7. Ejemplos**
+
+```py title="Haz lo que quieras"
+Ayúdame a interpretar qué quiso decir mi novia con su último mensaje: "Haz lo que quieras 👍"
+
+## ESTRATEGIA DE INTERACCIÓN (FLIPPED INTERACTION)
+
+No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
+
+1. Pregúntame todo lo que necesites saber para completar la tarea con la máxima calidad.
+2. Haz las preguntas de una en una y espera mi respuesta antes de hacer la siguiente.
+3. Continúa preguntando hasta que tengas suficiente información. Solo entonces, genera el RESULTADO FINAL.
+
+Hazme la primera pregunta. 
+```
+
+```py title="Crítica artística profunda"
+Generar una crítica artística profunda, filosófica y exageradamente compleja (al estilo de un curador de museo snob) sobre un dibujo objetivamente feo que acaba de hacer un niño de 4 años.
+
+## ESTRATEGIA DE INTERACCIÓN (FLIPPED INTERACTION)
+
+No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
+
+1. Pregúntame todo lo que necesites saber para completar la tarea con la máxima calidad.
+2. Haz las preguntas de una en una y espera mi respuesta antes de hacer la siguiente.
+3. Continúa preguntando hasta que tengas suficiente información. Solo entonces, genera el RESULTADO FINAL.
+
+Hazme la primera pregunta. 
+```
+

@@ -48,7 +48,7 @@ Un LLM siempre puede producir imprecisiones fácticas, al igual que un humano. U
 ```py title="PLANTILLA"
 [PREGUNTA]
 ## PROTOCOLO DE REFINAMIENTO
-Antes de responder:
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Sugiere una mejor versión de mi pregunta.
 2. Explica brevemente POR QUÉ tu versión es mejor.
 3. Consúltame si quiero usar la versión que tu proporcionas.
@@ -59,7 +59,7 @@ Antes de responder:
 ```py title="Número de Huesos"
 ¿Cuántos huesos tiene el cuerpo humano?
 ## PROTOCOLO DE REFINAMIENTO
-Antes de responder:
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Sugiere una mejor versión de mi pregunta.
 2. Explica brevemente POR QUÉ tu versión es mejor.
 3. Consúltame si quiero usar la versión que tu proporcionas.
@@ -68,7 +68,7 @@ Antes de responder:
 ```py title="Número de Paises"
 ¿Cuántos países hay en el mundo?
 ## PROTOCOLO DE REFINAMIENTO
-Antes de responder:
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Sugiere una mejor versión de mi pregunta.
 2. Explica brevemente POR QUÉ tu versión es mejor.
 3. Consúltame si quiero usar la versión que tu proporcionas.
@@ -77,7 +77,7 @@ Antes de responder:
 ```py title="La montaña más alta"
 ¿Cuál es la montaña más alta?
 ## PROTOCOLO DE REFINAMIENTO
-Antes de responder:
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Sugiere una mejor versión de mi pregunta.
 2. Explica brevemente POR QUÉ tu versión es mejor.
 3. Consúltame si quiero usar la versión que tu proporcionas.
@@ -86,16 +86,16 @@ Antes de responder:
 ```py title="A qué temperatura"
 ¿A qué temperatura hierve el agua?
 ## PROTOCOLO DE REFINAMIENTO
-Antes de responder:
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Sugiere una mejor versión de mi pregunta.
 2. Explica brevemente POR QUÉ tu versión es mejor.
 3. Consúltame si quiero usar la versión que tu proporcionas.
 ```
 
-```py title="A qué temperatura"
+```py title="Fruta o verdura"
 ¿El tomate es una fruta o una verdura?
 ## PROTOCOLO DE REFINAMIENTO
-Antes de responder:
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Sugiere una mejor versión de mi pregunta.
 2. Explica brevemente POR QUÉ tu versión es mejor.
 3. Consúltame si quiero usar la versión que tu proporcionas.

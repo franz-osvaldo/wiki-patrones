@@ -33,3 +33,47 @@ El patrón se personaliza aún más para instruir al LLM a que justifique su sel
 ## **5. Consecuencias**
 
 Una consecuencia del patrón de Reflexión es que puede no ser efectivo para usuarios que no comprenden el área temática de la discusión. Por ejemplo, una pregunta altamente técnica realizada por un usuario no técnico puede dar lugar a un razonamiento complejo para la respuesta que el usuario no pueda asimilar. Al igual que con otros patrones de prompts, existe el riesgo de que la salida incluya errores o suposiciones inexactas incorporadas en la explicación del razonamiento que el usuario podría no ser capaz de detectar. Este patrón puede combinarse con el patrón de **Lista de Verificación de Hechos** para ayudar a abordar este problema.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[TAREA / PREGUNTA]
+## INSTRUCCIONES DE REFLEXIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "🔍 REFLEXIÓN INTERNA". En ella debes detallar:
+1. El razonamiento paso a paso que seguiste.
+2. Las suposiciones que hiciste sobre mi contexto o intenciones.
+3. Cualquier limitación o posible ambigüedad en tu respuesta.
+4. Soluciones consideradas pero descartadas.
+```
+
+## **7. Ejemplos**
+
+```py title="Cubo de Rubik"
+¿Cuántos movimientos mínimos se necesitan para resolver un cubo de Rubik 3×3?
+## INSTRUCCIONES DE REFLEXIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "🔍  Reflexión y Justificación". En ella debes detallar:
+1. El razonamiento que seguiste.
+2. Las suposiciones que hiciste sobre mi contexto o intenciones.
+3. Cualquier limitación o posible ambigüedad en tu respuesta.
+4. Soluciones consideradas pero descartadas.
+```
+
+```py title="La Trampa Cultural"
+¿Cuánto debo dejar de propina en un restaurante por un buen servicio?
+## INSTRUCCIONES DE REFLEXIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "🔍  Reflexión y Justificación". En ella debes detallar:
+1. El razonamiento que seguiste.
+2. Las suposiciones que hiciste sobre mi contexto o intenciones.
+3. Cualquier limitación o posible ambigüedad en tu respuesta.
+4. Soluciones consideradas pero descartadas.
+```
+
+```py title="La Trampa Ética/Seguridad "
+He perdido mis llaves. ¿Cómo puedo abrir la puerta de mi casa sin romperla?
+## INSTRUCCIONES DE REFLEXIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "🔍  Reflexión y Justificación". En ella debes detallar:
+1.  El razonamiento que seguiste.
+2.  Las suposiciones que hiciste sobre mi contexto o intenciones.
+3. Cualquier limitación o posible ambigüedad en tu respuesta.
+4. Soluciones consideradas pero descartadas.
+```

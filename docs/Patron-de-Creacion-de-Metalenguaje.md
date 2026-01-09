@@ -49,7 +49,6 @@ Aunque la Creación de Metalenguaje es un patrón poderoso, debe usarse con cuid
 ```py title="PLANTILLA"
 [TAREA]
 ## NOTACIÓN ABREVIADA
-Reglas de interpretación:
 - Cuando diga [X], significa [Y]
 - Cuando diga [X], deseo que realices la acción [Y]
 ```

@@ -35,3 +35,37 @@ El patrón de Lista de Verificación de Hechos debe emplearse siempre que los us
 Los errores son potenciales en todas las salidas de los LLMs, por lo que la Lista de Verificación de Hechos es un patrón eficaz para combinar con otros patrones, como el de **Refinamiento de Pregunta**. Un aspecto clave de este patrón es que los usuarios pueden verificarlo inherentemente contra la salida. En particular, los usuarios pueden comparar directamente la lista de hechos con la salida para verificar si los hechos enumerados en la lista de verificación realmente aparecen en la salida. Los usuarios también pueden identificar cualquier omisión en la lista. Aunque la propia lista de verificación de hechos también puede contener errores, los usuarios suelen tener suficiente conocimiento y contexto para determinar su integridad y precisión en relación con la salida.
 
 Una advertencia del patrón de Lista de Verificación de Hechos es que solo se aplica cuando el tipo de salida es propenso a la verificación de hechos. Por ejemplo, el patrón funciona al pedirle a ChatGPT que genere un archivo “requirements.txt” de Python, ya que enumerará las versiones de las librerías como hechos que deben verificarse, lo cual es útil dado que las versiones suelen contener errores. Sin embargo, ChatGPT se negará a generar una lista de verificación de hechos para un ejemplo de código e indicará que esto es algo que no puede verificar, a pesar de que el código pueda contener errores.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[TAREA / PREGUNTA]
+## INSTRUCCIONES DE VERIFICACIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "✅ LISTA DE VERIFICACIÓN DE HECHOS". En ella debes detallar:
+1. Extrae y enumera los hechos críticos mencionados explícitamente en tu respuesta (solo los que aparecen en el texto). Se debe incluir solo los hechos que, si fueran incorrectos, comprometerían la veracidad de la información (por ejemplo, fechas, nombres técnicos o estadísticas). 
+2. Ordena los hechos de mayor a menor impacto en la confiabilidad de la respuesta.
+3. Cada ítem debe ser una afirmación factual breve.
+4. **Advertencia:** No agregues hechos nuevos en la lista que no estén en el texto de tu respuesta.
+```
+
+## **7. Ejemplos**
+
+```py title="Donde un número equivocado es peligroso"
+¿Cuál es la dosis segura de Paracetamol para un adulto de 70kg y cuáles son los síntomas de sobredosis?
+## INSTRUCCIONES DE VERIFICACIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "✅ LISTA DE VERIFICACIÓN DE HECHOS". En ella debes detallar:
+1. Extrae y enumera los hechos críticos mencionados explícitamente en tu respuesta (solo los que aparecen en el texto). Se debe incluir solo los hechos que, si fueran incorrectos, comprometerían la veracidad de la información (por ejemplo, fechas, nombres técnicos o estadísticas). 
+2. Ordena los hechos de mayor a menor impacto en la confiabilidad de la respuesta.
+3. Cada ítem debe ser una afirmación factual breve.
+4. **Advertencia:** No agregues hechos nuevos en la lista que no estén en el texto de tu respuesta.
+```
+
+```py title="Seguridad Alimentaria"
+¿A qué temperatura interna exacta debo cocinar un pollo entero para que sea seguro comerlo?
+## INSTRUCCIONES DE VERIFICACIÓN
+**Una vez generada la respuesta**, añade un separador y una sección titulada "✅ LISTA DE VERIFICACIÓN DE HECHOS". En ella debes detallar:
+1. Extrae y enumera los hechos críticos mencionados explícitamente en tu respuesta (solo los que aparecen en el texto). Se debe incluir solo los hechos que, si fueran incorrectos, comprometerían la veracidad de la información (por ejemplo, fechas, nombres técnicos o estadísticas). 
+2. Ordena los hechos de mayor a menor impacto en la confiabilidad de la respuesta.
+3. Cada ítem debe ser una afirmación factual breve.
+4. **Advertencia:** No agregues hechos nuevos en la lista que no estén en el texto de tu respuesta.
+```
