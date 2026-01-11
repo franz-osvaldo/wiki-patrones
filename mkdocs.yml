@@ -3,6 +3,7 @@ theme:
   name: material
   features:
     - content.code.copy
+    # - navigation.sections
   palette: 
     # Palette toggle for light mode
     - scheme: default
@@ -24,22 +25,30 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+  - admonition
+  - pymdownx.details
 nav:
     # - Index: index.md
-    - Patrón de Creación de Metalenguaje: Patron-de-Creacion-de-Metalenguaje.md
-    - Automatizador de Salida: Automatizador-de-Salida.md
-    - Patrón de Interacción Invertida: Patron-de-Interaccion-Invertida.md
-    - Patrón Persona: Patron-Persona.md
-    - Patrón de Refinamiento de Pregunta: Patron-de-Refinamiento-de-Pregunta.md
-    - Patrón de Enfoques Alternativos: Patron-de-Enfoques-Alternativos.md
-    - Patrón de Verificador Cognitivo: Patron-de-Verificador-Cognitivo.md
-    - Patrón de Lista de Verificación de Hechos: Patron-de-Lista-de-Verificacion-de-Hechos.md
-    - Patrón de Plantilla: Patron-de-Plantilla.md
-    - Patrón de Generación Infinita: Patron-de-Generacion-Infinita.md
-    - Patrón Generador de Visualización: Patron-Generador-de-Visualizacion.md
-    - Patrón Juego: Patron-Juego.md
-    - Patrón de Reflexión: Patron-de-Reflexion.md
-    - Patrón Rompedor de Rechazo: Patron-Rompedor-de-Rechazo.md
-    - Patrón Gestor de Contexto: Patron-Gestor-de-Contexto.md
-    - Patrón Receta: Patron-Receta.md
-    - Patrón De Público Objetivo: Patron-De-Publico-Objetivo.md
+    - SEMÁNTICA DE ENTRADA:
+      - Patrón de Creación de Metalenguaje: Patron-de-Creacion-de-Metalenguaje.md
+    - PERSONALIZACIÓN DE SALIDA:
+      - Automatizador de Salida: Automatizador-de-Salida.md
+      - Patrón Persona: Patron-Persona.md
+      - Patrón Generador de Visualización: Patron-Generador-de-Visualizacion.md
+      - Patrón Receta: Patron-Receta.md
+      - Patrón de Plantilla: Patron-de-Plantilla.md
+      - Patrón De Público Objetivo: Patron-De-Publico-Objetivo.md
+    - IDENTIFICACIÓN DE ERRORES:
+      - Patrón de Lista de Verificación de Hechos: Patron-de-Lista-de-Verificacion-de-Hechos.md
+      - Patrón de Reflexión: Patron-de-Reflexion.md
+    - MEJORA DEL PROMPT:
+      - Patrón de Refinamiento de Pregunta: Patron-de-Refinamiento-de-Pregunta.md
+      - Patrón de Enfoques Alternativos: Patron-de-Enfoques-Alternativos.md
+      - Patrón de Verificador Cognitivo: Patron-de-Verificador-Cognitivo.md
+      - Patrón Rompedor de Rechazo: Patron-Rompedor-de-Rechazo.md
+    - INTERACCIÓN:
+      - Patrón de Interacción Invertida: Patron-de-Interaccion-Invertida.md            
+      - Patrón Juego: Patron-Juego.md
+      - Patrón de Generación Infinita: Patron-de-Generacion-Infinita.md
+    - CONTROL DE CONTEXTO:
+      - Patrón Gestor de Contexto: Patron-Gestor-de-Contexto.md
