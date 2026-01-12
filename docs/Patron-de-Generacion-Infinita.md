@@ -40,3 +40,119 @@ Este prompt combina la funcionalidad del patrón de Generación Infinita con el 
 ## **5. Consecuencias**
 
 En cada paso, el modelo recibe la salida anterior y la nueva instrucción del usuario. Como el contexto que se conserva es limitado, con el tiempo puede perder de vista el prompt original. Esto puede hacer que el modelo se desvíe del comportamiento esperado o empiece a repetir respuestas. Por eso es importante que el usuario supervise las salidas y dé retroalimentación correctiva cuando sea necesario.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+A partir de la siguiente instrucción que te dé, aplica **[PATRÓN]** a todas tus respuestas de manera indefinida, hasta que escriba >>STOP<<.
+```
+
+## **7. Ejemplos**
+
+### IDENTIFICACIÓN DE ERRORES
+
+#### El Patrón de Lista de Verificación de Hechos
+
+```py title="Generación infinita de lista de hechos"
+A partir de la siguiente instrucción que te dé, aplica **INSTRUCCIONES DE VERIFICACIÓN** a todas tus respuestas de manera indefinida, hasta que escriba >>STOP<<.
+
+## INSTRUCCIONES DE VERIFICACIÓN
+
+**Una vez generada la respuesta**, añade un separador y una sección titulada "✅ LISTA DE VERIFICACIÓN DE HECHOS". En ella debes detallar:
+1. Extrae y enumera los hechos críticos mencionados explícitamente en tu respuesta (solo los que aparecen en el texto). Se debe incluir solo los hechos que, si fueran incorrectos, comprometerían la veracidad de la información (por ejemplo, fechas, nombres técnicos o estadísticas). 
+2. Ordena los hechos de mayor a menor impacto en la confiabilidad de la respuesta.
+3. Cada ítem debe ser una afirmación factual breve.
+4. **Advertencia:** No agregues hechos nuevos en la lista que no estén en el texto de tu respuesta.
+```
+
+```py title="Donde un número equivocado es peligroso"
+¿Cuál es la dosis segura de Paracetamol para un adulto de 70kg y cuáles son los síntomas de sobredosis?
+```
+
+```py title="Seguridad Alimentaria"
+¿A qué temperatura interna exacta debo cocinar un pollo entero para que sea seguro comerlo?
+```
+
+#### El Patrón de Reflexión
+
+```py title="Generación infinita de reflexión"
+A partir de la siguiente instrucción que te dé, aplica **INSTRUCCIONES DE REFLEXIÓN** a todas tus respuestas de manera indefinida, hasta que escriba >>STOP<<.
+
+## INSTRUCCIONES DE REFLEXIÓN
+
+**Una vez generada la respuesta**, añade un separador y una sección titulada "🔍 REFLEXIÓN INTERNA". En ella debes detallar:
+1. El razonamiento paso a paso que seguiste.
+2. Las suposiciones que hiciste sobre mi contexto o intenciones.
+3. Cualquier limitación o posible ambigüedad en tu respuesta.
+4. Soluciones consideradas pero descartadas.
+```
+
+```py title="Cubo de Rubik"
+¿Cuántos movimientos mínimos se necesitan para resolver un cubo de Rubik 3×3?
+```
+
+```py title="La Trampa Cultural"
+¿Cuánto debo dejar de propina en un restaurante por un buen servicio?
+```
+
+### MEJORA DEL PROMPT
+
+#### El Patrón de Refinamiento de Pregunta
+
+```py title="Generación infinita de refinamiento"
+A partir de la siguiente instrucción que te dé, aplica **PROTOCOLO DE REFINAMIENTO** a todas tus respuestas de manera indefinida, hasta que escriba >>STOP<<.
+
+## PROTOCOLO DE REFINAMIENTO
+
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Sugiere una mejor versión de mi pregunta.
+2. Explica brevemente POR QUÉ tu versión es mejor.
+3. Consúltame si quiero usar la versión que tu proporcionas.
+```
+
+```py title="Número de Huesos"
+¿Cuántos huesos tiene el cuerpo humano?
+```
+
+```py title="Número de Paises"
+¿Cuántos países hay en el mundo?
+```
+
+#### El Patrón de Enfoques Alternativos
+
+```py title="Generación infinita de enfoques alternativos"
+A partir de la siguiente instrucción que te dé, aplica **PROTOCOLO DE ENFOQUES ALTERNATIVOS** a todas tus respuestas de manera indefinida, hasta que escriba >>STOP<<.
+
+## PROTOCOLO DE ENFOQUES ALTERNATIVOS
+
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Lista 3 enfoques radicalmente diferentes para resolver la tarea.
+2. Para cada enfoque listado, explica brevemente los "Pros" y los "Contras".
+3. Pregúntame qué enfoque me gustaría utilizar antes de que generes tu respuesta.
+
+```
+
+```py title="Estudiante de primer año de psicología"
+Explica el concepto de "Inteligencia Artificial Generativa". Asume que soy estudiante de primer año de psicología.
+```
+
+#### El Patrón de Verificador Cognitivo
+
+```py title="Generación infinita de verificación cognitiva"
+A partir de la siguiente instrucción que te dé, aplica **ESTRATEGIA DE VERIFICACIÓN COGNITIVA** a todas tus respuestas de manera indefinida, hasta que escriba >>STOP<<.
+
+## ESTRATEGIA DE VERIFICACIÓN COGNITIVA 
+
+No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
+1. Para que puedas responder con precisión, genera 3 preguntas adicionales que necesites que yo responda para aclarar el contexto. 
+2. Una vez que yo responda, combina esa nueva información para producir la respuesta final y completa.
+
+```
+
+```py title="La Excusa Perfecta"
+Genera una excusa creíble para no ir a la fiesta de cumpleaños de mi jefe este sábado.
+```
+
+```py title="El Pánico del Aniversario"
+Olvidé que mañana mi esposa y yo estamos de aniversario. Dime qué comprar rápido.
+```
