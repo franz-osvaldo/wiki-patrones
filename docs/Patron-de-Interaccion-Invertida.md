@@ -46,7 +46,7 @@ Al desarrollar prompts para interacciones invertidas, es importante considerar e
 
 ```py title="PLANTILLA"
 [OBJETIVO GENERAL]
-## ESTRATEGIA DE INTERACCIÓN (FLIPPED INTERACTION)
+## ESTRATEGIA DE INTERACCIÓN INVERTIDA(FLIPPED INTERACTION)
 
 No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
 
@@ -62,7 +62,7 @@ Hazme la primera pregunta.
 ```py title="Haz lo que quieras"
 Ayúdame a interpretar qué quiso decir mi novia con su último mensaje: "Haz lo que quieras 👍"
 
-## ESTRATEGIA DE INTERACCIÓN (FLIPPED INTERACTION)
+## ESTRATEGIA DE INTERACCIÓN INVERTIDA(FLIPPED INTERACTION)
 
 No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
 
@@ -76,7 +76,7 @@ Hazme la primera pregunta.
 ```py title="Crítica artística profunda"
 Generar una crítica artística profunda, filosófica y exageradamente compleja (al estilo de un curador de museo snob) sobre un dibujo objetivamente feo que acaba de hacer un niño de 4 años.
 
-## ESTRATEGIA DE INTERACCIÓN (FLIPPED INTERACTION)
+## ESTRATEGIA DE INTERACCIÓN INVERTIDA(FLIPPED INTERACTION)
 
 No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
 
@@ -86,4 +86,3 @@ No generes la respuesta todavía, ni des ejemplos o borradores.  En su lugar:
 
 Hazme la primera pregunta. 
 ```
-

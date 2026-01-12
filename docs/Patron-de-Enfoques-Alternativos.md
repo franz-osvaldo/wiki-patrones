@@ -41,7 +41,7 @@ Este patrón es efectivo en su forma genérica y puede aplicarse a una amplia ga
 
 ```py title="PLANTILLA"
 [ TAREA/PREGUNTA ]
-## ENFOQUES ALTERNATIVOS
+## PROTOCOLO DE ENFOQUES ALTERNATIVOS
 No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Lista [N - opcional] enfoques radicalmente diferentes para resolver la tarea.
 2. Para cada enfoque listado, explica brevemente los "Pros" y los "Contras".
@@ -52,7 +52,7 @@ No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 
 ```py title="El aprendiz de violín"
 Mi vecino de arriba está aprendiendo a tocar el violín a las 11 de la noche. Necesito que pare.
-## ENFOQUES ALTERNATIVOS
+## PROTOCOLO DE ENFOQUES ALTERNATIVOS
 No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Lista enfoques radicalmente diferentes para resolver la tarea.
 2. Para cada enfoque listado, explica brevemente los "Pros" y los "Contras".
@@ -66,7 +66,7 @@ No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 
 ```py title="Estudiante de primer año de psicología"
 Explica el concepto de "Inteligencia Artificial Generativa". Asume que soy estudiante de primer año de psicología.
-## ENFOQUES ALTERNATIVOS
+## PROTOCOLO DE ENFOQUES ALTERNATIVOS
 No generes la respuesta todavía, ni des ejemplos o borradores. En su lugar:
 1. Lista enfoques radicalmente diferentes para resolver la tarea.
 2. Para cada enfoque listado, explica brevemente los "Pros" y los "Contras".
