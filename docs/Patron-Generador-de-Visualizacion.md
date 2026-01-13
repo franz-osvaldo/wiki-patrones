@@ -16,7 +16,7 @@ Declaraciones contextuales fundamentales:
 | :--- |
 | Genera un X que pueda proporcionar a la herramienta Y para visualizarlo |
 
-El objetivo de las declaraciones contextuales es indicar al LLM que la salida que va a producir, “X”, se convertirá en imágenes. Dado que los LLMs no pueden generar imágenes, la aclaración “que pueda proporcionar a la herramienta Y para visualizarlo” especifica que no se espera que el LLM genere una imagen, sino que se espera que produzca una descripción de imágenes consumible por la herramienta Y para la producción de la imagen.
+El objetivo de las declaraciones contextuales es indicar al LLM que la salida que va a producir, **_X_**, se convertirá en imágenes. Dado que los LLMs no pueden generar imágenes, la aclaración "que pueda proporcionar a la herramienta **_Y_** para visualizarlo” especifica que no se espera que el LLM genere una imagen, sino que se espera que produzca una descripción de imágenes consumible por la herramienta Y para crear la imagen.
 
 Muchas herramientas pueden admitir múltiples tipos de visualizaciones o formatos y, por lo tanto, la herramienta de destino en sí misma puede no ser información suficiente para producir con precisión lo que el usuario desea. Es posible que el usuario deba indicar los tipos precisos de visualizaciones (por ejemplo, gráfico de barras, grafo dirigido, diagrama de clases UML) que deben producirse. Por ejemplo, Graphviz Dot puede crear diagramas tanto para diagramas de clases UML como para grafos dirigidos. Además, como se discutirá en el siguiente ejemplo, puede ser ventajoso especificar una lista de posibles herramientas y formatos y dejar que el LLM seleccione el objetivo apropiado para la visualización.
 
@@ -24,8 +24,20 @@ Muchas herramientas pueden admitir múltiples tipos de visualizaciones o formato
 
 > “Cada vez que te pida visualizar algo, por favor crea un archivo de Graphviz Dot o un prompt de DALL-E que pueda usar para crear la visualización. Elige las herramientas apropiadas basándote en lo que necesite ser visualizado”.
 
-Este ejemplo del patrón añade una calificación de que el tipo de salida para la visualización puede ser para Graphviz o para DALL-E. Lo interesante de este enfoque es que permite al LLM utilizar su comprensión semántica del formato de salida para seleccionar automáticamente la herramienta de destino basándose en lo que se mostrará. En este caso, Graphviz sería para visualizar grafos con necesidad de una estructura exactamente definida. DALL-E sería eficaz para visualizar imágenes realistas o artísticas que no tienen una estructura exactamente definida. El LLM puede seleccionar la herramienta basándose en las necesidades de la visualización y las capacidades de cada herramienta.
+Este enfoque permite que el LLM utilice su comprensión semántica para elegir automáticamente el formato de salida según el contexto. Graphviz se emplearía para estructuras definidas con precisión (como grafos), mientras que DALL-E sería ideal para representaciones artísticas o realistas que no requieren una estructura rígida.
 
 ## **5. Consecuencias**
 
-El patrón crea un pipeline de destino para que la salida renderice una visualización. El pipeline puede incluir generadores de IA, como DALL-E, que pueden producir visualizaciones ricas. El patrón permite al usuario expandir las capacidades expresivas de la salida hacia el dominio visual.
+El patrón establece un flujo de trabajo (_pipeline_) donde la salida del modelo se transforma en una visualización final. Este proceso puede integrar generadores de IA potentes, como DALL-E, para obtener resultados visualmente sofisticados. En última instancia, este patrón expande las capacidades expresivas del modelo hacia el terreno visual.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+Genera [OBJETIVO] en formato [FORMATO] que pueda proporcionar a la herramienta [HERRAMIENTA/SITIO WEB] para visualizarlo como [NOMBRE DE LA GRÁFICA]. Por favor, no incluyas texto explicativo, dame solo solo la respuesta dentro de un bloque de código.
+```
+
+## **7. Ejemplos**
+
+```py title="Mapa mental"
+Genera un temario jerárquico sobre ASTRONOMÍA BÁSICA en formato Markdown que pueda proporcionar a la herramienta markmap.js.org para visualizarlo como mapa mental. Por favor, no incluyas texto explicativo, dame solo solo la respuesta dentro de un bloque de código.
+```
