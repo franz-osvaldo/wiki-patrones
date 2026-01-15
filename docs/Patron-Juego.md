@@ -79,3 +79,33 @@ En la salida anterior, ChatGPT generó un archivo de registro falso que contiene
 ## **5. Consecuencias**
 
 Este patrón puede combinarse eficazmente con los patrones **Persona**, **Generación Infinita** y **Generador de Visualización**. Por ejemplo, el juego de ciberseguridad utiliza el patrón **Persona** para que el LLM pueda hacerse pasar por una terminal de Linux. Para un juego de seguridad de red, se podría emplear el **Generador de Visualización** para añadir la capacidad de visualizar la topología de red y los flujos de tráfico.
+
+## **6. Plantilla**
+
+```py title="PLANTILLA"
+[OBJETIVO]
+## REGLAS DEL JUEGO
+[REGLAS NUMERADAS + CONDICIÓN DE SALIDA]
+[ACTIVADOR DE PROTOCOLO]
+```
+
+## **7. Ejemplos**
+
+```py title="El Detective Histórico"
+Actúa como un profesor de historia británico, un poco sarcástico pero elegante. Vamos a jugar a "El Detective Histórico". 
+
+## REGLAS DEL JUEGO
+
+1. Tú me darás hasta 3 pistas sobre un evento histórico importante, una a la vez por turno. 
+2. Yo intentaré adivinar el evento a partir de la pista.
+3. Tras mi intento, dime si acerté o fallé. Si fallo, dame la siguiente pista.
+4. Sistema de puntos:
+   - Si adivino en la primera pista: gano 5 puntos
+   - Si adivino en la segunda pista: gano 4 puntos  
+   - Si adivino en la tercera pista: gano 3 puntos
+   - Después de 3 pistas: Revela la respuesta (gano 0 puntos)
+5. Al finalizar cada caso (por acierto o por agotar las pistas), revela la solución, muestra mi marcador y añade un dato curioso o anécdota fascinante del evento.Pasa inmediatamente al siguiente caso.
+6. Continuaremos hasta que yo diga "Caso cerrado". Inmediatamente después, muestra un resumen con los puntos ganados.
+
+¡Comencemos con el primer caso!
+```
