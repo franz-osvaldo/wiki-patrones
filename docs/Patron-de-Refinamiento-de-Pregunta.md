@@ -39,7 +39,6 @@ Para superar una orientación demasiado estrecha, se puede combinar este patrón
 
 Al igual que con muchos patrones que permiten a un LLM generar nuevas preguntas utilizando su conocimiento, el LLM puede introducir términos o conceptos desconocidos para el usuario en la pregunta. Una forma de abordar este problema es incluir una declaración que indique que el LLM debe explicar cualquier término desconocido que introduzca en la pregunta. Una mejora adicional de esta idea es combinar el patrón de **Refinamiento de Pregunta** con el patrón **Persona** para que el LLM marque los términos y genere definiciones que asuman un nivel particular de conocimiento, como en este ejemplo:
 
-
 > “De ahora en adelante, cada vez que haga una pregunta, haz cuatro preguntas adicionales que te ayuden a producir una versión mejor de mi pregunta original. Luego, usa mis respuestas para sugerir una versión mejor de mi pregunta original. Después de las preguntas de seguimiento, actúa temporalmente como un usuario sin conocimientos de AWS y define cualquier término que necesite saber para responder con precisión a las preguntas”.
 
 Un LLM siempre puede producir imprecisiones fácticas, al igual que un humano. Un riesgo de este patrón es que las imprecisiones se introduzcan en la pregunta refinada. Este riesgo puede mitigarse, sin embargo, combinando el patrón de **Lista de Verificación de Hechos** para permitir al usuario identificar posibles imprecisiones y el patrón de **Reflexión** para explicar el razonamiento detrás del refinamiento de la pregunta.
