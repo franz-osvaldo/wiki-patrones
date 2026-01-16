@@ -52,5 +52,6 @@ nav:
       - Patrón de Generación Infinita: Patron-de-Generacion-Infinita.md
     - CONTROL DE CONTEXTO:
       - Patrón Gestor de Contexto: Patron-Gestor-de-Contexto.md
-    - GEMINI:
-      - Gemas: gems.md
+    - Plantillas: plantillas.md  
+    # - GEMINI:
+      # - Gemas: gems.md
